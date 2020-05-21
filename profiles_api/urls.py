@@ -5,7 +5,8 @@ from profiles_api import views
 #routers are used for VIEW-SETS, really cool, will automatically generate the URLs and we can just pass it into our urlpatterns arr
 router = DefaultRouter()
 
-router.register('hello-viewset', views.HelloViewSet, base_name='hello-viewset')
+router.register('hello-viewset', views.HelloViewSet, base_name='hello-viewset') #need to specify base name since there is no queryset.
+router.register('profile',views.UserProfileViewSet) #no base name since this is a model viewset
 
 #this is basically a router like nodeJS
 urlpatterns = [
